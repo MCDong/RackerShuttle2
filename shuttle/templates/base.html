@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    {% if breadcrumbs %}
+    {% for b in breadcrumbs %}
+    {% if b.active %}
+    <title>{{b.title}}</title>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/table.css" rel="stylesheet">
+    <style>
+      body { padding-top : 60px; /* 60px to make the container go all the way
+          to the bottom of the topbar */ }
+      @media (min-width: 768px) { /* To push content below navbar */
+        body {
+          margin-top: 41px;
+        }
+      }
+      textarea {
+        width: 50% !important;
+    }
+      .home-icon a {
+        padding: 0 !important;
+      }
+    </style>
+
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+      </script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+
+    <link rel="shortcut icon" href="/static/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/ico/apple-touch-icon-57-precomposed.png">
+    <!-- themes -->
+    <link rel="stylesheet" href="/static/css/bootstrap.spacelab.min.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/overcast/jquery-ui.min.css">
+    <link rel="stylesheet" href="/static/css/fullcalendar.css">
+    <link rel="stylesheet" href="/static/css/theme.bootstrap.css">
+
+  </head>
+  <body>
+    
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+          <div class="container">
+
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="home-icon"><a href="/"><img src="http://rackershuttle.com/static/img/nrlb.png" height="50" width="50"></li></a>
+              <li><a href="/schedule"><i class="icon-list-alt"></i> Schedule</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+        <img src="http://rackershuttle.com/static/img/nrlb.png" height="200" width="200">
+        {% block content %}
+        {% endblock %}
+    </div> <!-- /container -->
+    <!-- libraries -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/fullcalendar.min.js"></script>
+    <script src="/static/js/jquery.tablesorter.min.js"></script>
+    <!-- our JS -->
+    <script src="/static/js/index.js"></script>
+
+{% block postscript %}
+{% endblock %}
+
+  </body>
+</html>
