@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name='index'),
     url(r'^schedule/', views.schedule, name='schedule'),
+    url(r'^wait_list/(?P<sid>\d+)', views.wait_list)
 )
