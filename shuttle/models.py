@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class WifiInfo(models.Model):
@@ -15,6 +16,7 @@ class Shuttle(models.Model):
 	departure_location = models.ForeignKey(Location, related_name='departure_location')
 	arrival_location = models.ForeignKey(Location, related_name='arrival_location')
 class Racker(models.Model):
+	user = models.OneToOneField(User)
 	username = models.CharField(max_length=128)
 	name = models.CharField(max_length=128)
 	phone = models.CharField(max_length=64)

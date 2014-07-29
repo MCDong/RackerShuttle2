@@ -53,7 +53,7 @@ ROOT_URLCONF = 'RackerShuttle2.urls'
 
 WSGI_APPLICATION = 'RackerShuttle2.wsgi.application'
 
-
+AUTH_PROFILE_MODULE = 'shuttle.Racker'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
