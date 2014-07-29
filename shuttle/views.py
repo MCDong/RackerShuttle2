@@ -18,3 +18,7 @@ def schedule(request):
     now = datetime.now()
     shuttles = Shuttle.objects.filter(time__gte=now)
     return render(request, 'schedule.html', {'shuttles' : shuttles})
+
+def rider_list(request, sid):
+    shuttle = Shuttle.objects.get(id=sid)
+    rackers = Racker.objects.filter()
