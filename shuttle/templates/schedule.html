@@ -1,4 +1,26 @@
-{%extends "base.html"%}
-{%block content%}
+ {% extends "base.html" %} 
+ {% block content %} 
+ <h1>Shuttles<h1> 
+ <table style="width:600px"> 
+ <tr> 
+   <th><font size="4">Departure Location</font></th> 
+   <th><font size="4">Departure Time</font></th> 
+   <th><font size="4">Capacity</font></th> 
+   <th><font size="4">Number Signed-Up</font></th> 
+   <th><font size="4">Number Signed-In</font></th> 
+   <th><font size="4">Waitlist Size</font></th> 
+ </tr> 
+ {% for shuttle in shuttles %} 
+     <tr>
+       <td><a href="/wait_list/{{shuttle.id}}"> <font size="4">{{shuttle.id}}</font></a></td>  
+       <td><font size="4">{{shuttle.departure_location.location}}</font></td> 
+       <td><font size="4">{{shuttle.time}}</font></td> 
+       <td><font size="4">{{shuttle.capacity}}</font></td> 
+       <td><font size="4">{{shuttle.num_signedup}}</font></td> 
+       <td><font size="4">{{shuttle.num_checkedin}}</font></td> 
+       <td><font size="4">{{shuttle.num_on_waitlist}}</font></td> 
+     </tr> 
+ {% endfor %} 
+ </table> 
+ {%endblock%} 
 
-{%endblock%}
