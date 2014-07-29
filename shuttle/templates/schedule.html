@@ -1,7 +1,7 @@
  {% extends "base.html" %} 
  {% block content %} 
- <h1>Shuttles<h1> 
- <table style="width:600px"> 
+ <h1>Shuttles</h1> 
+ <table class="table table-bordered table-condensed table-striped" border="2" cellpadding="8" style="width:600px"> 
  <tr> 
    <th><font size="4">Departure Location</font></th> 
    <th><font size="4">Departure Time</font></th> 
@@ -12,13 +12,12 @@
  </tr> 
  {% for shuttle in shuttles %} 
      <tr>
-       <td><a href="/wait_list/{{shuttle.id}}"> <font size="4">{{shuttle.id}}</font></a></td>  
-       <td><font size="4">{{shuttle.departure_location.location}}</font></td> 
-       <td><font size="4">{{shuttle.time}}</font></td> 
-       <td><font size="4">{{shuttle.capacity}}</font></td> 
-       <td><font size="4">{{shuttle.num_signedup}}</font></td> 
-       <td><font size="4">{{shuttle.num_checkedin}}</font></td> 
-       <td><font size="4">{{shuttle.num_on_waitlist}}</font></td> 
+       <td>{{shuttle.departure_location.location}}</td> 
+       <td><a href="/wait_list/{{shuttle.id}}">{{shuttle.time}}</a></td> 
+       <td>{{shuttle.capacity}}</td> 
+       <td>{{shuttle.num_signedup}}</td> 
+       <td>{{shuttle.num_checkedin}}</td> 
+       <td>{{shuttle.num_on_waitlist}}</td> 
      </tr> 
  {% endfor %} 
  </table> 
