@@ -22,9 +22,15 @@ def schedule(request):
     shuttles = Shuttle.objects.filter(time__gte=now)
     return render(request, 'schedule.html', {'shuttles' : shuttles})
 
+
 def wait_list(request, sid):
     shuttle = Shuttle.objects.get(id=sid)
     q = Q(waiting_for_morning__id=sid) | Q(waiting_for_afternoon__id=sid)
     waitlist = Racker.objects.filter(q)
     if shuttle.time 
     return render(request, 'wait_list.html', {'waitlist' : waitlist})
+
+def rider_list(request, sid):
+    shuttle = Shuttle.objects.get(id=sid)
+    rackers = Racker.objects.filter()
+

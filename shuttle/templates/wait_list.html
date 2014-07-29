@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block content%}
+<table>
+	<th>Name</th>
+	<th>Time</th>
+	{%for w in waitlist%}
+	<tr>
+		<td>{{w.name}}</td>
+		<td>{{w.phone}}</td>
+	</td>
+	{%endfor%}
+</table>
+{%endblock%}
